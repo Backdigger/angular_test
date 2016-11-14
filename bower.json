@@ -1,0 +1,17 @@
+{
+  "name": "angular",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "hlebedzeva <hlebedzeva@scnsoft.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

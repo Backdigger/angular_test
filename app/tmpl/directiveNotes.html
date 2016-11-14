@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="col-xs-6 creator">
+
+                <div style="background-color: white;">
+                    <form>
+                        <input placeholder="Title" name="newNoteTitle" class="col-xs-10 title" type="text">
+                        <input placeholder="Take a note..." name="newNoteValue" class="col-xs-10" type="text">
+                        <div class="actions col-xs-12 row">
+                            <div class="col-xs-3">
+                                <div class="color-selector">
+                                    <img src="img/color-picker.png" class="img-responsive">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-light">
+                                Done
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-controller="customersCtrl" class="row">
+            <div ng-repeat="card in myData" class="col-xs-4 note-card" style="background-color: {{card.color}}">
+                <div class="col-xs-12 title">{{card.title}}</div>
+                <div class="col-xs-12 value">{{card.value}}</div>
+            </div>
+        </div>
+    </div>
+
+</div> <!--container-->
+
+
