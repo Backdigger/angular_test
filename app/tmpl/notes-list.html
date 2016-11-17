@@ -24,13 +24,8 @@
 
 
         <div ng-controller="customersCtrl" class="row">
-            <div ng-repeat="card in myData" class="col-xs-4 note-card" style="background-color: {{card.color}}">
-                <div class="col-xs-12 title">{{card.title}}</div>
-                <div class="col-xs-12 value">{{card.value}}</div>
-            </div>
+            <notes-item></notes-item>
         </div>
     </div>
 
 </div> <!--container-->
-
-
