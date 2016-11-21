@@ -1,6 +1,6 @@
 app.component('notesList', {
-    template: `<div ng-controller="customersCtrl" class="row">
-                    <div  ng-repeat="note in data" ><notes-item></notes-item></div></div>`,
+    template: `<div ng-controller="customersCtrl as ctrl" class="row">
+                    <div  ng-repeat="note in ctrl" ><notes-item></notes-item></div></div>`,
 
     bindings: { note: '=' }
 })
