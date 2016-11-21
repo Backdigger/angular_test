@@ -1,7 +1,7 @@
-angular.module('myApp', ["ngRoute"])
-    .controller('customersCtrl', function ($scope, myDataService) {
-        myDataService.getData().then(function (resp) {
-            $scope.data = resp;
+angular.module('myApp', ['ngRoute'])
+    .controller('customersCtrl', function (myDataService) {
+        myDataService.getData().then((resp) => {
+            this.data = resp;
         });
 
     })
@@ -9,59 +9,34 @@ angular.module('myApp', ["ngRoute"])
 
     .config(function ($routeProvider) {
         $routeProvider
-            .when("/notes", {
-                templateUrl: "app/tmpl/notes-list.html"
+            .when('/notes', {
+                templateUrl: 'app/tmpl/notes-list.html'
             })
-            .when("/about", {
-                templateUrl: "app/tmpl/directiveAbout.html"
-            })
+            .when('/about', {
+                templateUrl: 'app/tmpl/directiveAbout.html'
+            });
 
     })
 
+    .service('myDataService', ['$http', function ($http) {
+        this.getData = () => $http.get('http://irden-workshop.info/api/notes').then((response) =>
+            success => response.data,
+            error => console.warn('error', error)
+        );
+    }])
 
-    .service('myDataService', function ($http) {
-        return {
-            getData: function () {
-                var promise1 = $http.get('http://irden-workshop.info/api/notes').then(function (response) {
-                    return response.data;
-                });
-                return promise1;
-            }
-        };
-    })
-
-    .component("notesList", {
+    .component('notesList', {
 
         bindings: {
-            item: '= notesItem'
-
+            notes: '='
         }
     })
-    .component("notesItem", {
-        template: ' <div ng-controller="customersCtrl" class="row"><div  ng-repeat="card in data"  ' +
-'style="background-color: {{card.color}}" ' +
-'class="col-xs-4 note-card"><div class="col-xs-12 title">{{card.title}}</div><div class="col-xs-12 value">{{card.value}}</div></div>'+
-        '</div>',
-        bindings: {
-
-        }
+    .component('notesItem', {
+        template: ` <div ng-controller="customersCtrl" class="row"><div  ng-repeat="note in notes"
+'style="background-color: {{note.color}}"
+'class="col-xs-4 note-card"><div class="col-xs-12 title">{{note.title}}</div><div class="col-xs-12 value">{{note.value}}</div></div>
+        </div>`,
+        bindings: { note: '=' }
 
     });
 
-
-// controller: function FsListViewComponent() {
-//
-//
-//     function selectedListItem(item) {
-//         this.$selectedItem = item;
-//     }
-//
-//     function selectItem(item) {
-//         
-//         this.onSelect({
-//             selectedItem: item
-//         });
-//     }
-//
-//
-// }

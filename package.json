@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-plugin-angular": "^1.4.1",
     "gulp": "^3.9.1",
     "gulp-webserver": "^0.9.1",
     "lite-server": "^2.2.2"
