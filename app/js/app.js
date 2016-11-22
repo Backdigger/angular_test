@@ -1,17 +1,20 @@
     var app = angular.module('myApp', ['ngRoute']);
 
-    app.controller('customersCtrl', function (myDataService) {
+    function CustomersCtrl(myDataService) {
         myDataService.getData().then((resp) => {
             this.data = resp;
         });
+    }
 
-    })
+    app.controller('customersCtrl', CustomersCtrl)
 
 
     .config(function ($routeProvider) {
         $routeProvider
             .when('/notes', {
-                templateUrl: 'app/tmpl/notes-list.html'
+                templateUrl: 'app/tmpl/notes-list.html',
+                controller: CustomersCtrl,
+                controllerAs: 'ctrl'
             })
             .when('/about', {
                 templateUrl: 'app/tmpl/directiveAbout.html'
