@@ -1,3 +1,5 @@
+(function () {
+
     var app = angular.module('myApp', ['ngRoute']);
 
     function CustomersCtrl(myDataService) {
@@ -9,19 +11,21 @@
     app.controller('customersCtrl', CustomersCtrl)
 
 
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when('/notes', {
-                templateUrl: 'app/tmpl/notes.html',
-                controller: CustomersCtrl,
-                controllerAs: 'ctrl'
-            })
-            .when('/about', {
-                templateUrl: 'app/tmpl/about.html'
-            });
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/notes', {
+                    templateUrl: 'app/tmpl/notes.html',
+                    controller: CustomersCtrl,
+                    controllerAs: '$ctrl'
+                })
+                .when('/about', {
+                    templateUrl: 'app/tmpl/about.html'
+                })
+                .otherwise('/notes');
 
-    });
 
+        });
+})();
 
 // controller: function FsListViewComponent() {
 //
