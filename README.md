@@ -2,7 +2,6 @@
 To set up the project, do:
 
 1. npm install
-2. npm install lite-server --save-dev
 3. # Inside package.json...
   "scripts": {    
     "dev": "lite-server"
