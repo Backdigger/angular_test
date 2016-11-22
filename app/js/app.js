@@ -12,12 +12,12 @@
     .config(function ($routeProvider) {
         $routeProvider
             .when('/notes', {
-                templateUrl: 'app/tmpl/notes-list.html',
+                templateUrl: 'app/tmpl/notes.html',
                 controller: CustomersCtrl,
                 controllerAs: 'ctrl'
             })
             .when('/about', {
-                templateUrl: 'app/tmpl/directiveAbout.html'
+                templateUrl: 'app/tmpl/about.html'
             });
 
     });
