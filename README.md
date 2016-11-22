@@ -2,11 +2,11 @@
 To set up the project, do:
 
 1. npm install
-3. # Inside package.json...
+2. # Inside package.json...
   "scripts": {    
     "dev": "lite-server"
   },
-4. npm run dev
+3. npm run dev
 
 Technologies used:
 
