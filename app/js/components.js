@@ -1,11 +1,7 @@
 (function () {
     function NoteListController($scope, $element, $attrs) {
         let ctrl = this;
-        let newNote = {
-            title: '',
-            value: '',
-            color: 'white'
-        };
+
         ctrl.colors = ['#ff66ff', '#0033cc', '#669900', '#cc0066', '#99ccff', 'white'];
 
         ctrl.createNote = function (note) {
@@ -62,8 +58,8 @@
                        <div class="col-xs-3">
                        <div class="color-selector" colors="#ff66ff, #0033cc, #669900, #cc0066, #99ccff, white" ng-model="note.color">
                        <i class="material-icons icon"  ng-click="$ctrl.expand(color)">color_lens</i>
-                       <div ng-repeat="color in colors" >
-                       <color-picker note="note" color="color" class="selector" >
+                       <div  ng-repeat="color in $ctrl.colors" ng-show="color.show">
+                       <color-picker note="note" color="color" >
                        </color-picker>
                        </div>
                        </div>
@@ -79,10 +75,10 @@
 
         })
         .component('colorPicker', {
-            template: `<div ng-show="color.show" class="color" style="background-color: note.color">
-                       </div>`,
+            template: `<div class="selector"><div  class="color" style="background-color: note.color">
+                       </div></div>`,
             bindings: { note: '<',
-                color: '@',
+                color: '<',
                 onSubmit: '&'
             },
             controller: NoteListController

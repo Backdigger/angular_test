@@ -19,6 +19,25 @@
     box-shadow: 2px 2px 2px 2px gray;
 }
 
+.selector {
+    min-width: 120px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    background-color: #efefef;
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.color {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 input {
     border: none;
 }
