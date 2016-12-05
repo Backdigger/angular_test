@@ -27,20 +27,4 @@
         });
 })();
 
-// controller: function FsListViewComponent() {
-//
-//
-//     function selectedListItem(item) {
-//         this.$selectedItem = item;
-//     }
-//
-//     function selectItem(item) {
-//
-//         this.onSelect({
-//             selectedItem: item
-//         });
-//     }
-//
-//
-// }
 

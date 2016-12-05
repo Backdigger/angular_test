@@ -3,22 +3,7 @@
         <div class="row">
             <div class="col-xs-6 creator">
 
-                <div style="background-color: white;">
-                    <form>
-                        <input placeholder="Title" name="newNoteTitle" class="col-xs-10 title" type="text">
-                        <input placeholder="Take a note..." name="newNoteValue" class="col-xs-10" type="text">
-                        <div class="actions col-xs-12 row">
-                            <div class="col-xs-3">
-                                <div class="color-selector">
-                                    <i class="material-icons icon">color_lens</i>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn-light">
-                                Done
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <note-creator notes="$ctrl.data"></note-creator>
             </div>
         </div>
         <div>

@@ -8,6 +8,7 @@
                 success => success.data.filter(filterEmpty),
                 error => console.warn('error', error)
         );
+
     }]);
 
 })();
