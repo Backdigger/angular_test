@@ -25,8 +25,10 @@
     padding: 10px;
     background-color: #efefef;
     position: absolute;
-    top: 15px;
+    top: 2px;
     left: 0;
+    display: inline-flex;
+    list-style: none;
 }
 
 .color {
