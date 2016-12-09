@@ -1,0 +1,20 @@
+<div ng-style ="{'background-color': $ctrl.selectColor.color}" >
+    <form ng-submit="$ctrl.updateNotes($ctrl.notes)">
+        <input placeholder="Title" name="newNoteTitle" class="col-xs-10 title" type="text" ng-model="$ctrl.newNote.title">
+        <input placeholder="Take a note..." name="newNoteValue" class="col-xs-10" type="text" ng-model="$ctrl.newNote.value">
+        <div class="actions col-xs-12 row">
+            <div class="col-xs-3">
+                <div class="color-selector" note="note">
+                    <i class="material-icons icon"  ng-click="$ctrl.toggleColorList()">color_lens</i>
+                    <ul class="selector" ng-show="$ctrl.isColorListShow">
+                        <li ng-repeat="color in $ctrl.colors" >
+                            <div  note="note" ng-click="$ctrl.createNote(color)" class="color" style="background-color: {{ color }}">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn-submit">Done</button>
+    </form>
+</div>

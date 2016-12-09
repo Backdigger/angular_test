@@ -1,0 +1,4 @@
+<div  ng-repeat="note in $ctrl.notes"><notes-item note="note"><div ng-style ="{'background-color': note.color}" class="col-xs-4 note">
+    <div class="col-xs-12 title">{{note.title}}</div>
+    <div class="col-xs-12 value">{{note.value}}</div><button class="btn-delete" ng-click="$ctrl.deleteNote({note: note})">Delete note</button></div></notes-item>
+</div>
